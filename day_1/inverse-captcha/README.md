@@ -16,13 +16,15 @@ same value as the next digit in the list.
 
 ## Examples
 
-`lein run 1122`
+```clojure
+lein run 1122
+;; -> 3
+```
 
-`_;; -> 3_`
-
-`lein run 1212 --halfway`
-
-`_;; -> 6_`
+```clojure
+lein run 1212 --halfway
+;; -> 6
+```
 
 ## License
 

@@ -1,4 +1,5 @@
 (ns corruption-checksum.core
+  (:require [clojure.tools.cli :refer [parse-opts]])
   (:gen-class))
 
 (require ['clojure.string :as 'string])
@@ -40,6 +41,13 @@
   [input]
   (reduce + (map row-quotient (parse-input input))))
 
+(def cli-options
+  [["-d" "--divide"]])
+
 (defn -main
   [& args]
-  (println (spreadsheet-checksum-division (first args))))
+  (let [{:keys [options arguments]} (parse-opts args cli-options)]
+    (println
+     (if (options :divide)
+       (spreadsheet-checksum-division (first arguments))
+       (spreadsheet-checksum (first arguments))))))

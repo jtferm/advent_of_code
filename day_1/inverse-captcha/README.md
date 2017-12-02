@@ -1,6 +1,7 @@
 # inverse-captcha
 
 [Advent of Code 2017 Day 1](http://adventofcode.com/2017/day/1)
+
 Takes a string of digits and computes the sum of all elements that are the
 same value as the next digit in the list.
 
@@ -16,10 +17,12 @@ same value as the next digit in the list.
 ## Examples
 
 `lein run 1122`
-_;; -> 3_
+
+`_;; -> 3_`
 
 `lein run 1212 --halfway`
-_;; -> 6_
+
+`_;; -> 6_`
 
 ## License
 

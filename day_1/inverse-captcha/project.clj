@@ -1,6 +1,6 @@
 (defproject inverse-captcha "0.1.0-SNAPSHOT"
   :description "Day 1 of Advent of Code 2017"
-  :url "https://github.com/jferm/advent_of_code/day_1"
+  :url "https://github.com/jtferm/advent_of_code/day_1"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]

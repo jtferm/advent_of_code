@@ -21,6 +21,25 @@
   [input]
   (reduce + (map row-diff (parse-input input))))
 
+(defn fancy-divide
+  [x y]
+  (let [larger  (max x y)
+        smaller (min x y)]
+    (if (= 0 (mod larger smaller))
+      (/ larger smaller)
+      0)))
+
+(defn row-quotient
+  [values]
+  (let [row-value (reduce + (map (partial fancy-divide (first values)) (rest values)))]
+    (if (< 0 row-value)
+      row-value
+      (recur (rest values)))))
+
+(defn spreadsheet-checksum-division
+  [input]
+  (reduce + (map row-quotient (parse-input input))))
+
 (defn -main
   [& args]
-  (println (spreadsheet-checksum (first args))))
+  (println (spreadsheet-checksum-division (first args))))

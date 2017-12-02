@@ -1,4 +1,5 @@
 (ns inverse-captcha.core
+  (:require [clojure.tools.cli :refer [parse-opts]])
   (:gen-class))
 
 (import java.lang.Character)
@@ -24,6 +25,14 @@
   [ch]
   (java.lang.Character/digit ch 10))
 
+(def cli-options
+  [["-h" "--halfway"]])
+
 (defn -main
   [& args]
-  (println (sum-matching-halfway-around (map char-to-digit (seq (first args))))))
+  (let [{:keys [options arguments]} (parse-opts args cli-options)
+        digits (map char-to-digit (seq (first arguments)))]
+    (println
+     (if (options :halfway)
+       (sum-matching-halfway-around digits)
+       (sum-matching-next digits)))))

@@ -1,6 +1,6 @@
 # corruption-checksum
 
-[Advent of Code 2027 Day 2](http://adventofcode.com/2027/day/2)
+[Advent of Code 2017 Day 2](http://adventofcode.com/2017/day/2)
 
 ## Usage
 

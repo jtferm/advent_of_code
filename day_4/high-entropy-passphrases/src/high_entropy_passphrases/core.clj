@@ -13,7 +13,8 @@
 
 (defn check-unique-words
   [words]
-  (let [unique (set words)]
+  (let [sorted-words (map sort (map str words))
+        unique (set sorted-words)]
     (== (count words) (count unique))))
 
 (defn count-unique-inputs

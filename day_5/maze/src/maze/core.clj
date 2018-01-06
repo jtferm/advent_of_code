@@ -7,12 +7,18 @@
   [row]
   (vec (map read-string (string/split row #"\s+"))))
 
+(defn new-jump
+  [jump]
+  (if (>= jump 3)
+    (- jump 1)
+    (+ jump 1)))
+
 (defn jump
   [instructions offset]
   (let [jump (get instructions offset)
         destination (+ offset jump)]
     (if (< destination (count instructions))
-      [(assoc instructions offset (+ jump 1)) destination]
+      [(assoc instructions offset (new-jump jump)) destination]
       nil)))
 
 (defn jump-wrapper

@@ -8,4 +8,4 @@ File.open('input.txt', 'r') do |f|
   end
 end
 
-puts Frequency.compute(frequencies)
+puts Frequency.find_first_repeat(frequencies)
